@@ -1,0 +1,19 @@
+org: rubyjasmin
+app: expo-next-demo
+stage: ${env.STAGE}
+
+www-expo-next-demo:
+  build: false
+  component: "@sls-next/serverless-component@3.7.0"
+  inputs:
+    bucketName: ${env.BUCKET_NAME}-${stage}
+    description: "Lambda@Edge deployment for Demo Expo + Next.js"
+    cloudfront:
+      distributionId: ${env.AWS_DISTRIBUTION_ID}
+    domain: ["${env.SUBDOMAIN}", "${env.DOMAIN}"]
+    logLambdaExecutionTimes: true
+    memory: 2048
+    minifyHandlers: true
+    publicDirectoryCache:
+      value: public, max-age=31536000
+      test: /\.(gif|jpe?g|jp2|otf|tiff|png|webp|bmp|svg|ico)$/i
