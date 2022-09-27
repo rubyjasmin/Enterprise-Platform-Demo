@@ -19,21 +19,9 @@ const withTM = require("next-transpile-modules")([
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    browsersListForSwc: true,
-    forceSwcTransforms: true,
-  },
   headers: async () => [{ source: "/(.*)", headers: createSecureHeaders() }],
-  images: { disableStaticImages: true },
   poweredByHeader: false,
   reactStrictMode: true,
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      use: ["@svgr/webpack"],
-    });
-    return config;
-  },
 };
 
 const sentryConfig = {
@@ -45,7 +33,7 @@ const plugins = withPlugins(
   [
     withTM,
     withFonts,
-    [withImages, { fileExtensions: ["jpg", "jpeg", "png", "gif", "ico", "webp"] }],
+    withImages,
     bundledAnalyzer,
     [(config) => withSentryConfig(config, sentryConfig)],
     withExpo,
