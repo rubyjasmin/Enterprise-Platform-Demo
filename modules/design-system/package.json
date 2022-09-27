@@ -1,0 +1,24 @@
+{
+  "name": "@org/design-system",
+  "version": "0.0.0",
+  "main": "lib",
+  "scripts": {
+    "bundle": "tsc",
+    "cleanup": "npx rimraf lib",
+    "prebundle": "npx rimraf lib",
+    "dev": "yarn bundle -w"
+  },
+  "dependencies": {
+    "@dripsy/gradient": "3.8.1",
+    "dripsy": "^3.8.1",
+    "expo-linking": "^3.2.2",
+    "moti": "canary",
+    "react-native-reanimated": "2.8.0",
+    "solito": "latest"
+  },
+  "resolutions": {
+    "react-native-reanimated": "2.8.0"
+  },
+  "sideEffects": false,
+  "private": true
+}
