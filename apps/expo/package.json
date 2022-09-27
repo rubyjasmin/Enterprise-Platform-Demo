@@ -1,0 +1,47 @@
+{
+  "name": "expo-app",
+  "version": "0.0.0-alpha",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eas build",
+    "dev": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "@expo-google-fonts/poppins": "0.2.2",
+    "@org/design-system": "*",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/native-stack": "^6.7.0",
+    "@sentry/react-native": "4.2.2",
+    "expo": "~46.0.10",
+    "expo-application": "~4.2.2",
+    "expo-constants": "~13.2.4",
+    "expo-dev-client": "1.2.1",
+    "expo-device": "~4.3.0",
+    "expo-font": "10.2.0",
+    "expo-linear-gradient": "11.4.0",
+    "expo-splash-screen": "~0.16.1",
+    "expo-status-bar": "~1.4.0",
+    "expo-updates": "~0.14.5",
+    "react": "~18.0.0",
+    "react-dom": "~18.0.0",
+    "react-native": "~0.69.5",
+    "react-native-dotenv": "3.3.1",
+    "react-native-gesture-handler": "~2.5.0",
+    "react-native-reanimated": "~2.9.1",
+    "react-native-safe-area-context": "4.3.1",
+    "react-native-svg": "13.2.0",
+    "react-native-screens": "~3.15.0",
+    "react-native-web": "0.18.9",
+    "sentry-expo": "5.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.10",
+    "esbuild": "0.15.7",
+    "metro-minify-esbuild": "0.1.0",
+    "react-native-svg-transformer": "1.0.0",
+    "typescript": "^4.8.2"
+  },
+  "private": true
+}
