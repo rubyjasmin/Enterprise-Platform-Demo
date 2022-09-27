@@ -1,0 +1,4 @@
+{
+  "eslint.options": { "configFile": "./toolchain/lint/.eslintrc.js" },
+  "prettier.configPath": "./toolchain/lint/.prettierrc"
+}
