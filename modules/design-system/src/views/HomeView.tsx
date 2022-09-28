@@ -1,20 +1,16 @@
 import MuiIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { H1, P, Text, View } from "dripsy";
+import { useSx, H1, P, Row, Text, View } from "dripsy";
 import { Gradient } from "@dripsy/gradient";
-import { Platform } from "react-native";
+import { MotiLink } from "solito/moti";
+import { TextLink } from "solito/link";
 
-import { SafeArea } from "~layouts";
-import BackgroundImage from "../../assets/background.svg";
+import { RootDocument } from "~layouts";
 
 export function HomeView() {
+  const sx = useSx();
+
   return (
-    <SafeArea>
-      <BackgroundImage
-        style={Platform.select({
-          native: { position: "absolute", bottom: 0, transform: [{ rotateX: "180deg" }] },
-          default: { height: 143, width: "100%" },
-        })}
-      />
+    <RootDocument>
       <View sx={{ flex: 1, justifyContent: "center", alignItems: "center", p: 16 }}>
         <H1>Hello, I'm Ruby</H1>
         <View sx={{ maxWidth: 600 }}>
@@ -36,7 +32,37 @@ export function HomeView() {
             <MuiIcons name="email-open-outline" size={20} color="white" />
           </Gradient>
         </View>
+        <View sx={{ height: 32 }} />
+        <Row>
+          <TextLink
+            href="/blog/sample-blog"
+            textProps={{
+              style: sx({ fontSize: 16, fontWeight: "bold", color: "blue" }),
+            }}
+          >
+            Regular Link
+          </TextLink>
+          <View sx={{ width: 32 }} />
+          <MotiLink
+            href="/blog/sample-blog"
+            animate={({ hovered, pressed }: any) => {
+              "worklet";
+              return {
+                scale: pressed ? 0.95 : hovered ? 1.1 : 1,
+                rotateZ: pressed ? "0deg" : hovered ? "-3deg" : "0deg",
+              };
+            }}
+            transition={{
+              type: "timing",
+              duration: 150,
+            }}
+          >
+            <Text selectable={false} sx={{ fontSize: 16, color: "black", fontWeight: "bold" }}>
+              Moti Link
+            </Text>
+          </MotiLink>
+        </Row>
       </View>
-    </SafeArea>
+    </RootDocument>
   );
 }
