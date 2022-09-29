@@ -1,4 +1,4 @@
-export default async () => {
+module.exports = async () => {
   try {
     const user = {
       username: process.env.ADMIN_USER || "super_admin",
@@ -28,6 +28,6 @@ export default async () => {
 
     console.log("🚀 Super Admin user is created.");
   } catch (error) {
-    console.log("🚀 ~ file: index.js ~ line 31 ~ init admin ~ error", error);
+    console.log("🚀 init admin ~ error", error);
   }
 };

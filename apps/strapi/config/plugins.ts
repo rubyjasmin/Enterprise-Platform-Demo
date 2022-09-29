@@ -8,7 +8,7 @@ export default ({ env }) => ({
     enabled: true,
     config: {
       autoStart: true,
-      migrationFolderPath: "dist/migrations",
+      migrationFolderPath: "migrations",
     },
   },
   transformer: {

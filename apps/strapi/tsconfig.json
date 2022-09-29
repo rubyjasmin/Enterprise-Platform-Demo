@@ -13,10 +13,11 @@
   ],
   "exclude": [
     "node_modules/",
-    "build/",
-    "dist/",
     ".cache/",
     ".tmp/",
+    "build/",
+    "dist/",
+    "migrations",
     "src/admin/",
     "**/*.test.*",
     "src/plugins/**"
