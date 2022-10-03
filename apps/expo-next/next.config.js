@@ -19,6 +19,9 @@ const withTM = require("next-transpile-modules")([
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    cmsURL: process.env.CMS_URL,
+  },
   headers: async () => [{ source: "/(.*)", headers: createSecureHeaders() }],
   images: { disableStaticImages: true },
   poweredByHeader: false,
