@@ -215,6 +215,38 @@ export interface AdminApiToken extends CollectionTypeSchema {
   };
 }
 
+export interface ApiAuthorAuthor extends CollectionTypeSchema {
+  info: {
+    singularName: 'author';
+    pluralName: 'authors';
+    displayName: 'Authors';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    firstName: StringAttribute;
+    lastName: StringAttribute;
+    email: EmailAttribute;
+    avatar: StringAttribute;
+    createdAt: DateTimeAttribute;
+    updatedAt: DateTimeAttribute;
+    createdBy: RelationAttribute<
+      'api::author.author',
+      'oneToOne',
+      'admin::user'
+    > &
+      PrivateAttribute;
+    updatedBy: RelationAttribute<
+      'api::author.author',
+      'oneToOne',
+      'admin::user'
+    > &
+      PrivateAttribute;
+  };
+}
+
 export interface PluginUploadFile extends CollectionTypeSchema {
   info: {
     singularName: 'file';
@@ -624,6 +656,7 @@ declare global {
       'admin::user': AdminUser;
       'admin::role': AdminRole;
       'admin::api-token': AdminApiToken;
+      'api::author.author': ApiAuthorAuthor;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::menus.menu': PluginMenusMenu;

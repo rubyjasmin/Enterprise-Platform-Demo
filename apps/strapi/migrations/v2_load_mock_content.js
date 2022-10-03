@@ -2,7 +2,7 @@ const { faker } = require("@faker-js/faker");
 
 module.exports = async () => {
   try {
-    const authors = Array.from({ length: 5 }, () => {
+    const authors = Array.from({ length: 6 }, () => {
       const firstName = faker.name.firstName();
       const lastName = faker.name.lastName();
       const email = faker.helpers.unique(faker.internet.email, [firstName, lastName]);

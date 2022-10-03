@@ -13,6 +13,7 @@ export default ({ env }) => ({
   },
   transformer: {
     enabled: true,
+    prefix: "/graphql/",
     config: {
       responseTransforms: {
         removeAttributesKey: true,
