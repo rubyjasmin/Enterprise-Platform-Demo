@@ -8,9 +8,6 @@ const webFont = (font: string) =>
   });
 
 export const theme = makeTheme({
-  sizes: {
-    container: {},
-  },
   buttons: {
     primary: {
       flexDirection: "row",
@@ -36,20 +33,56 @@ export const theme = makeTheme({
   fonts: {
     root: "Poppins",
   },
+  fontSizes: {
+    $0: 12,
+    $1: 14,
+    $2: 16,
+    $3: 18,
+    $4: 24,
+    $5: 32,
+    $6: 40,
+  },
+  fontWeights: {
+    black: "800",
+    body: "normal",
+    bold: "bold",
+  },
   layout: {
-    root: {
-      maxWidth: 1100,
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
     },
   },
   text: {
+    bold: {
+      fontSize: "$3",
+      fontWeight: "bold",
+    },
     h1: {
-      fontFamily: "Poppins",
-      fontSize: 40,
-      fontWeight: "400",
+      fontSize: "$6",
+      fontWeight: "bold",
+    },
+    h3: {
+      fontWeight: "bold",
     },
     p: {
-      fontSize: 16,
+      fontSize: "$2",
+      my: "$3",
     },
+  },
+  sizes: {
+    container: {},
+  },
+  space: {
+    $0: 0,
+    $1: 4,
+    $2: 8,
+    $3: 16,
+    $4: 32,
+    $5: 64,
+    $6: 128,
+    $7: 256,
   },
 });
 
